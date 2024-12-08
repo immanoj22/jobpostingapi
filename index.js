@@ -31,6 +31,9 @@ app.post("/submit",async(req,res)=>{
     await db.query("INSERT INTO companylist (createjobtitile,companyname,district,jobtype,minsalary,maximumsalary,jobdescription,selecteddate) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)",[
         createjobtitile,companyname,district,jobtype,minsalary,maximumsalary,jobdescription,selectedDate
     ])
+     let result= await db.query("SELECT * FROM companylist ORDER BY id ASC")
+        
+     return res.json(result.rows)
    }catch(err){
     console.log(err)
    }
