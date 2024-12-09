@@ -6,9 +6,9 @@ import bodyParser from "body-parser";
 const app=express();
 app.use(bodyParser.json())
 app.use(
-    cors(
+    cors({
         origin:"https://sparkly-pie-94a5bd.netlify.app/",methods:["GET","POST","PATCH","DELETE"]
-    )
+    })    
 )
 app.get("/",(req,res)=>{
     res.send("Hello")
