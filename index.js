@@ -6,9 +6,7 @@ import bodyParser from "body-parser";
 const app=express();
 app.use(bodyParser.json())
 app.use(
-    cors({
-        origin:"http://localhost:3000",methods:["GET","POST","PATCH","DELETE"]
-    })
+    cors()
 )
 app.get("/",(req,res)=>{
     res.send("Hello")
