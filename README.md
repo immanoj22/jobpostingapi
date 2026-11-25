@@ -7,6 +7,16 @@ A small Node and Express API for a job posting board. It stores job posts in Pos
 - Saves a new post with title, company name, district, job type, min and max salary, description and a date
 - Uses the `pg` connection pool and reads the database URL from a `.env` file
 
+## How it works
+
+```mermaid
+flowchart LR
+    R[React job board form] -->|POST /submit| API[Express API :9000]
+    R -->|GET /home| API
+    API --> P[pg pool]
+    P --> DB[(PostgreSQL companylist)]
+```
+
 ## Tech stack
 Node.js (ES modules), Express, pg, cors, body-parser, dotenv
 
