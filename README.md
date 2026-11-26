@@ -45,3 +45,5 @@ You need Node and a PostgreSQL database.
 
 ## Notes
 No update or delete, no validation, no auth and no tests. Errors are only logged to the console, so a failed query leaves the request hanging. The column name `createjobtitile` is a typo I kept so it matches the code.
+
+Copy `.env.example` to `.env` and put your own database URL in it.
